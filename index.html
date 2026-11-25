@@ -3,35 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Syndicate | Clan Hub</title>
+  <title>Shadow Syndicate | CODM Clan Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #141414;
+      --text: #e8e8e8;
+      --muted: #a0a0a0;
+      --accent: #4ade80;
+      --accent-dark: #166534;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: system-ui, sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      font-size: 1.1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      margin: 0;
+      padding: 4rem 1.5rem;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 70%);
     }
-    h1 { font-size: 3rem; letter-spacing: 0.2em; }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .hero p { font-size: 1.25rem; color: var(--muted); margin-bottom: 1.5rem; }
     .status {
-      background: #1a3a1a;
-      color: #4ade80;
-      padding: 0.5rem 1rem;
+      background: var(--accent-dark);
+      color: var(--accent);
+      padding: 0.5rem 1.25rem;
       border-radius: 999px;
+      font-weight: 600;
+    }
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    a.btn {
       display: inline-block;
+      background: var(--accent);
+      color: #0a0a0a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
       margin-top: 1rem;
+    }
+    a.btn:hover { filter: brightness(1.1); }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      border-top: 1px solid #222;
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
-  <div>
+  <header>
+    <nav>
+      <div class="logo">SHADOW SYNDICATE</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#recruit">Recruit</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
     <h1>SHADOW SYNDICATE</h1>
-    <p>Clan Hub is live</p>
-    <div class="status">Online</div>
-  </div>
+    <p>Call of Duty: Mobile Clan Hub</p>
+    <div class="status">Online • Recruiting</div>
+  </section>
+
+  <section id="about">
+    <h2>About the Clan</h2>
+    <div class="card">
+      <p>SHADOW*SYNDICATE is a competitive Call of Duty: Mobile clan focused on Clan Wars and climbing the ranks.</p>
+      <p style="margin-top:1rem;">We hit Legendary in our first season and cracked the leaderboard in our second. Looking for active, dedicated players who want to push further.</p>
+    </div>
+  </section>
+
+  <section id="recruit">
+    <h2>Recruitment</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Who We’re Looking For</h3>
+        <ul style="margin-top:1rem; padding-left:1.25rem;">
+          <li>Active daily / consistent Clan Wars participation</li>
+          <li>Strong teamwork and communication</li>
+          <li>Serious about improving and competing</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>How to Join</h3>
+        <p>Apply in-game or reach out directly.</p>
+        <p style="margin-top:0.75rem;">In-game tag: <strong>§*World_War_Z</strong></p>
+        <a class="btn" href="https://discord.gg/placeholder" target="_blank">Join Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <h2>Clan Rules</h2>
+    <div class="card">
+      <ol style="padding-left:1.25rem;">
+        <li>Respect teammates — no toxicity or drama.</li>
+        <li>Participate in Clan Wars when scheduled.</li>
+        <li>No cheating, boosting, or unfair play.</li>
+        <li>Represent the clan tag properly.</li>
+        <li>Communicate and coordinate during matches.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Links</h2>
+    <div class="card">
+      <p><strong>In-game:</strong> §*World_War_Z</p>
+      <p><strong>Instagram / Discord:</strong> world_war_z.codm</p>
+      <p style="margin-top:1rem;">Site: <a href="https://shadowsyndicate.net" style="color:var(--accent);">shadowsyndicate.net</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>SHADOW SYNDICATE • Call of Duty: Mobile</p>
+    <p style="margin-top:0.5rem; font-size:0.875rem;">Clan Hub • Built for the operators</p>
+  </footer>
 </body>
 </html>
